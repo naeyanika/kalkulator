@@ -7,33 +7,38 @@ def muat_data_dari_github(url):
     return data
 
 # Fungsi untuk menghitung rating
-def calculate_rating(minor, moderate, major, fraud):
+ef calculate_rating(minor, moderate, major, fraud):
+    # Jika ada fraud, langsung HIGH
     if fraud:
         return "HIGH"
     
-    # Kriteria untuk High
+    # Moderate >= 16 langsung HIGH
+    if moderate >= 16:
+        return "HIGH"
+    
+    # Kriteria HIGH lainnya:
     if (
-        (1 <= major <= 2 and moderate > 12) or 
-        (major > 3) or 
-        (moderate == 0 and major > 0)
+        (1 <= major <= 2 and moderate > 12) or  # Kriteria 1
+        (major >= 3) or                         # Kriteria 2
+        (major > 0 and moderate == 0)           # Bagian dari Kriteria 2
     ):
         return "HIGH"
     
-    # Kriteria untuk Medium
+    # Kriteria MEDIUM:
     if (
-        (major == 0 and 8 <= moderate <= 15) or
-        (major == 1 and 8 <= moderate <= 12) or
-        (major == 2 and 8 <= moderate <= 10)
+        (major == 0 and 8 <= moderate <= 15) or    # Kriteria 1
+        (major == 1 and 8 <= moderate <= 12) or    # Kriteria 2
+        (major == 2 and 8 <= moderate <= 10)       # Kriteria 3
     ):
         return "MEDIUM"
     
-    # Kriteria untuk Low
+    # Kriteria LOW:
     if (
-        major == 0 and (moderate == 0 or 1 <= moderate <= 7)
+        (major == 0 and moderate <= 7)    # Tidak ada major dan moderate 0-7
     ):
         return "LOW"
     
-    # Default jika tidak masuk kriteria
+    # Default case
     return "LOW"
 
 # Streamlit untuk antarmuka
