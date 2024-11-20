@@ -38,7 +38,7 @@ def calculate_rating(minor, moderate, major, fraud):
     return "LOW"
 
 # Streamlit untuk antarmuka
-st.title("Kalkulator Risk Issue")
+st.title("Kalkulator Audit Rating")
 
 # Input jumlah temuan
 minor = st.number_input("Masukkan jumlah temuan Minor:", min_value=0, step=1)
