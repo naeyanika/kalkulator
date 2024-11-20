@@ -14,7 +14,7 @@ def calculate_rating(minor, moderate, major, fraud):
     
     # Kriteria HIGH lainnya:
     if (
-        (1 = major <= 2 and moderate > 12) or  # Kriteria 1
+        (1 == major <= 2 and moderate > 12) or  # Kriteria 1
         (major >= 3 )         # Bagian dari Kriteria 2
     ):
         return "HIGH"
