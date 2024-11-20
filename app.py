@@ -7,7 +7,7 @@ def muat_data_dari_github(url):
     return data
 
 # Fungsi untuk menghitung rating
-ef calculate_rating(minor, moderate, major, fraud):
+def calculate_rating(minor, moderate, major, fraud):
     # Jika ada fraud, langsung HIGH
     if fraud:
         return "HIGH"
