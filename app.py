@@ -12,15 +12,10 @@ def calculate_rating(minor, moderate, major, fraud):
     if fraud:
         return "HIGH"
     
-    # Moderate >= 16 langsung HIGH
-    if moderate >= 16:
-        return "HIGH"
-    
     # Kriteria HIGH lainnya:
     if (
-        (1 <= major <= 2 and moderate > 12) or  # Kriteria 1
-        (major >= 3) or                         # Kriteria 2
-        (major > 0 and moderate == 0)           # Bagian dari Kriteria 2
+        (1 = major <= 2 and moderate > 12) or  # Kriteria 1
+        (major >= 3 )         # Bagian dari Kriteria 2
     ):
         return "HIGH"
     
