@@ -13,23 +13,23 @@ def calculate_rating(minor, moderate, major, fraud):
         return "HIGH"
     
     # Kriteria HIGH lainnya:
-    if (
-        (1 == major <= 2 and moderate >= 12) or  # Kriteria 1
-        (major >= 3 )         # Bagian dari Kriteria 2
+   if (
+        (1 <= major <= 2 and moderate >= 12) or  # Kriteria 1
+        (major >= 3)                             # Bagian dari Kriteria 2
     ):
         return "HIGH"
     
     # Kriteria MEDIUM:
     if (
         (moderate >= 8) or
-        (major == 0 and 8 <= moderate >= 15) or    # Kriteria 1
-        (major == 1 and 8 <= moderate <= 12) or    # Kriteria 2
-        (major == 2 and 8 <= moderate <= 10)       # Kriteria 3
+        (major == 0 and moderate >= 8 and moderate <= 15) or    # Kriteria 1
+        (major == 1 and moderate >= 8 and moderate <= 12) or    # Kriteria 2
+        (major == 2 and moderate >= 8 and moderate <= 10)       # Kriteria 3
     ):
         return "MEDIUM"
     
     # Kriteria LOW:
-    if (
+   if (
         (major == 0 and moderate <= 7)    # Tidak ada major dan moderate 0-7
     ):
         return "LOW"
