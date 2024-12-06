@@ -39,6 +39,7 @@ def calculate_rating(minor, moderate, major, fraud):
 
 # Streamlit untuk antarmuka
 st.title("Kalkulator Audit Rating")
+st.markdown('''refresh web ini jika rating audit issue nya tidak bejalan''')
 
 # Input jumlah temuan
 minor = st.number_input("Masukkan jumlah temuan Minor:", min_value=0, step=1)
