@@ -40,8 +40,9 @@ def calculate_rating(minor, moderate, major, fraud):
 # Streamlit untuk antarmuka
 st.title("Kalkulator Audit Rating")
 st.markdown('''
-Refresh web ini jika rating audit issue nya tidak bejalan
-Disarankan menggunakan web browser seperti Google Chrome atau Microsoft Edge
+- Refresh web ini jika rating audit issue nya tidak bejalan
+- Disarankan menggunakan web browser seperti Google Chrome atau Microsoft Edge
+- Penginputan jumlah temuan bisa ketikkan angka nya langsung
 ''')
 
 # Input jumlah temuan
